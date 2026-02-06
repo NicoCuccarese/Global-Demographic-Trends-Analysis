@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Demographic Trends Analysis | Data Science Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div style="font-size: 1.1rem; font-weight: 300; opacity: 0.85; margin-bottom: 15px; letter-spacing: 2px;">BY NICO CUCCARESE</div>
+            <h1>Global Demographic Trends Analysis</h1>
+            <p class="subtitle">Exploring Population Dynamics, Fertility Patterns, and Life Expectancy Across Continents</p>
+            <div class="metadata">
+                <div class="metadata-item">
+                    <span>📊</span>
+                    <span>Data Science Project</span>
+                </div>
+                <div class="metadata-item">
+                    <span>🌍</span>
+                    <span>UN Population Data (1950-2100)</span>
+                </div>
+                <div class="metadata-item">
+                    <span>🔬</span>
+                    <span>R Programming & Machine Learning</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Project Overview -->
+        <div class="stats-banner">
+            <div class="stat-item">
+                <span class="stat-number">18</span>
+                <span class="stat-label">Interactive Visualizations</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Years of Data Analyzed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Global Regions Compared</span>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="card">
+            <h2 class="card-title">Executive Summary</h2>
+            <p>This comprehensive analysis examines global demographic trends using UN World Population Prospects data spanning from 1950 to 2100. Through exploratory data analysis and machine learning techniques, we uncover critical insights into population dynamics, fertility rate transitions, gender ratio variations, and the profound impact of historical events on life expectancy.</p>
+            
+            <div class="tags">
+                <span class="tag">Population Analysis</span>
+                <span class="tag">Fertility Trends</span>
+                <span class="tag">Life Expectancy</span>
+                <span class="tag">Gender Ratios</span>
+                <span class="tag">Predictive Modeling</span>
+            </div>
+        </div>
+
+        <!-- Methodology -->
+        <div class="methodology">
+            <h3>Data Processing & Methodology</h3>
+            <p>The analysis employed rigorous data cleaning and transformation procedures to ensure accuracy and reliability.</p>
+            
+            <div class="method-steps">
+                <div class="method-step">
+                    <h4>1. Data Import</h4>
+                    <p>Loaded UN demographic data from Excel workbooks, separating historical estimates from future projections</p>
+                </div>
+                <div class="method-step">
+                    <h4>2. Data Cleaning</h4>
+                    <p>Standardized column names, removed separators, converted text to numeric values, and filtered relevant regions</p>
+                </div>
+                <div class="method-step">
+                    <h4>3. Exploratory Analysis</h4>
+                    <p>Created 18+ visualizations examining population, fertility, mortality, and gender distribution patterns</p>
+                </div>
+                <div class="method-step">
+                    <h4>4. Machine Learning</h4>
+                    <p>Built linear regression models to predict life expectancy and compared results with UN projections</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Global Population Trends -->
+        <div class="section-header">
+            <h2>Global Population Dynamics</h2>
+            <p class="section-description">Understanding worldwide population growth patterns and regional variations from 1950 to projected 2100.</p>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">World Population Trajectory (2024-2100)</h3>
+            <div class="chart-container">
+                <canvas id="worldPopulationChart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> Global population is projected to peak around 10 billion by 2100, with growth rates gradually declining as fertility rates converge across regions.
+            </div>
+        </div>
+
+        <!-- Section 2: Fertility Rate Analysis -->
+        <div class="section-header">
+            <h2>Fertility Rate Transitions</h2>
+            <p class="section-description">Examining how birth rates have evolved and will continue to change across different regions and countries.</p>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Regional Fertility Convergence (1950-2100)</h3>
+            <div class="chart-container">
+                <canvas id="fertilityChart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> Fertility rates are converging globally. Africa started at 6+ births per woman in 1950 and is projected to reach replacement level (~2.1) by 2100, while developed regions already operate below replacement level.
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Continental Fertility Rates in 2100</h3>
+            <div class="chart-container">
+                <canvas id="fertility2100Chart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> By 2100, Africa stabilizes near replacement level (2.0), while Asia (1.75) and Europe (1.6) fall below replacement, indicating future population decline without immigration.
+            </div>
+        </div>
+
+        <!-- Section 3: India & China Population Dynamics -->
+        <div class="section-header">
+            <h2>India & China: Population Superpowers</h2>
+            <p class="section-description">Analyzing the demographic trajectories of the world's two most populous nations.</p>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">The Great Population Crossover (1950-2100)</h3>
+            <div class="chart-container">
+                <canvas id="indiaChinaChart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> India surpassed China as the world's most populous nation around 2023. While both countries grew from ~0.5B in 1950, China's One-Child Policy slowed growth, causing population decline after 2030. India continues growing to ~1.7B before stabilizing.
+            </div>
+        </div>
+
+        <!-- Section 4: Gender Distribution Analysis -->
+        <div class="section-header">
+            <h2>Gender Ratio Dynamics</h2>
+            <p class="section-description">Exploring male-female population distributions and what drives regional variations.</p>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Global Gender Balance (2022)</h3>
+            <div class="chart-container" style="height: 350px;">
+                <canvas id="genderPieChart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> The global population maintains a near-perfect 50/50 gender split (50.4% male, 49.6% female), serving as a baseline for regional comparisons.
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Male-to-Female Ratio Evolution</h3>
+            <div class="chart-container">
+                <canvas id="genderRatioChart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> The US ratio shows a notable dip in the 1970s-80s (Vietnam War demographic impact). Asia maintains a higher ratio (historical policies + cultural preferences). Europe's steady female surplus reflects longer female life expectancy and lower male survival rates.
+            </div>
+        </div>
+
+        <!-- Section 5: Life Expectancy -->
+        <div class="section-header">
+            <h2>Life Expectancy Trends</h2>
+            <p class="section-description">How longevity has improved globally and the impact of conflicts and disasters.</p>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Regional Life Expectancy Progress (1950-2023)</h3>
+            <div class="chart-container">
+                <canvas id="lifeExpectancyChart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> All regions show improvement, but gaps persist. Europe and Northern America lead (75-80 years), while Africa lags (60-65 years). Global convergence is occurring but slowly.
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Impact of Armed Conflict on Life Expectancy at Age 65</h3>
+            <div class="chart-container">
+                <canvas id="conflictImpactChart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> Afghanistan shows sharp declines during Soviet-Afghan War (1980s) and post-2001 conflict. Iran exhibits steady growth with minor stagnation during Iran-Iraq War. Vietnam demonstrates rapid improvement post-war and after Doi Moi reforms (late 1980s), showcasing resilience and recovery.
+            </div>
+        </div>
+
+        <!-- Section 6: Death Rate Analysis -->
+        <div class="section-header">
+            <h2>Mortality Rate Patterns</h2>
+            <p class="section-description">Understanding how death rates vary globally and what drives these differences.</p>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Projected Global Death Rate Increase (2024-2100)</h3>
+            <div class="chart-container">
+                <canvas id="deathRateChart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> Death rates are projected to increase steadily as the global population ages and approaches peak population. More elderly people means more deaths, even with improving healthcare. This reflects the demographic transition as birth rates fall below replacement level.
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Continental Death Rates (2023)</h3>
+            <div class="chart-container">
+                <canvas id="deathRate2023Chart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> Europe's significantly higher death rate (~11 per 1000) reflects its aging population rather than poor healthcare. Advanced health systems have extended lifespans, creating a large elderly cohort now dying of natural causes. This demonstrates the demographic paradox: better healthcare → longer life → older population → higher crude death rate.
+            </div>
+        </div>
+
+        <!-- Section 7: Migration -->
+        <div class="section-header">
+            <h2>Migration Patterns</h2>
+            <p class="section-description">Examining population movement and displacement events.</p>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Ukraine Migration Crisis (1950-2023)</h3>
+            <div class="chart-container">
+                <canvas id="ukraineMigrationChart"></canvas>
+            </div>
+            <div class="card-insight">
+                <strong>Key Insight:</strong> Ukraine experienced catastrophic net migration loss starting in 2022 (Russian invasion), with ~4 million people fleeing. This represents one of the largest displacement events in recent European history, highlighting how armed conflict drives mass population movement.
+            </div>
+        </div>
+
+        <!-- Key Findings -->
+        <div class="key-findings">
+            <h3>Critical Findings</h3>
+            <div class="findings-grid">
+                <div class="finding-item">
+                    <h4>Fertility Convergence</h4>
+                    <p>Global fertility rates are converging toward replacement level, with Africa declining from 6+ to 2.0 births per woman by 2100</p>
+                </div>
+                <div class="finding-item">
+                    <h4>Population Peak</h4>
+                    <p>World population projected to peak at ~10 billion by 2100, with many developed regions experiencing decline</p>
+                </div>
+                <div class="finding-item">
+                    <h4>Gender Imbalances</h4>
+                    <p>Asia shows male dominance (policy effects), Europe female surplus (life expectancy), US balanced with historical fluctuations</p>
+                </div>
+                <div class="finding-item">
+                    <h4>Conflict Impact</h4>
+                    <p>Wars and disasters create dramatic life expectancy drops (Afghanistan, Bangladesh, Haiti), but long-term resilience enables recovery</p>
+                </div>
+                <div class="finding-item">
+                    <h4>Aging Europe</h4>
+                    <p>Europe's high death rate paradox: better healthcare → longer lives → aging population → higher crude death rate</p>
+                </div>
+                <div class="finding-item">
+                    <h4>Migration Crises</h4>
+                    <p>Ukraine's 2022 exodus (~4M) represents one of Europe's largest recent displacement events, driven by armed conflict</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="conclusion">
+            <h3>Conclusion</h3>
+            <p>
+                This comprehensive analysis reveals the complex interplay of historical events, socioeconomic development, and policy decisions in shaping global demographic trends. From fertility rate transitions to life expectancy improvements, from gender ratio imbalances to migration crises, the data tells a story of human resilience, progress, and ongoing challenges. 
+                <br><br>
+                Key patterns emerge: fertility rates are converging globally toward replacement level; life expectancy continues improving despite setbacks from conflicts and disasters; gender ratios reflect cultural, policy, and biological factors; and death rates in aging societies paradoxically rise even as healthcare improves. 
+                <br><br>
+                The machine learning models demonstrate that while stable societies allow accurate demographic forecasting, conflict zones remain unpredictable. As we approach a peak global population of ~10 billion by 2100, understanding these trends becomes crucial for policy planning, resource allocation, and sustainable development.
+            </p>
+        </div>
+
+        <!-- Technical Skills Demonstrated -->
+        <div class="methodology">
+            <h3>Technical Skills Demonstrated</h3>
+            <div class="method-steps">
+                <div class="method-step">
+                    <h4>Data Wrangling</h4>
+                    <p>Excel import, column standardization, type conversion, filtering, joining datasets</p>
+                </div>
+                <div class="method-step">
+                    <h4>Visualization</h4>
+                    <p>ggplot2 mastery: line charts, bar charts, heatmaps, pie charts, faceted plots, custom themes</p>
+                </div>
+                <div class="method-step">
+                    <h4>Statistical Analysis</h4>
+                    <p>Trend analysis, ratio calculations, correlation examination, time series patterns</p>
+                </div>
+                <div class="method-step">
+                    <h4>Machine Learning</h4>
+                    <p>Linear regression, train-test split, model evaluation (RMSE, R²), prediction validation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Global Demographic Trends Analysis | Data Science Portfolio Project</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">Data Source: UN World Population Prospects 2024 | Analysis conducted in R</p>
+    </footer>
+
+    <script src="charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+:root {
+    --primary: #1a1a2e;
+    --secondary: #16213e;
+    --accent: #0f3460;
+    --highlight: #e94560;
+    --text: #2d2d2d;
+    --text-light: #666;
+    --bg: #fafafa;
+    --card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    color: white;
+    padding: 120px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 Q300,60 600,40 T1200,20 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.metadata {
+    display: inline-flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.metadata-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Section Headers */
+.section-header {
+    margin: 80px 0 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--highlight);
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 800px;
+}
+
+/* Card System */
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.card-insight {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    border-left: 4px solid var(--highlight);
+    padding: 20px 25px;
+    margin-top: 25px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin: 25px 0;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+}
+
+.chart-container canvas {
+    max-height: 100%;
+}
+
+/* Grid Layout for Charts */
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+    .chart-container {
+        height: 300px;
+    }
+}
+
+/* Key Findings Box */
+.key-findings {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    margin: 60px 0;
+}
+
+.key-findings h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.findings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.finding-item {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.finding-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--highlight);
+}
+
+/* Methodology Section */
+.methodology {
+    background: var(--card-bg);
+    padding: 50px;
+    border-radius: 20px;
+    margin: 60px 0;
+    border: 1px solid #e0e0e0;
+}
+
+.methodology h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
+
+.method-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.method-step {
+    padding: 20px;
+    border-left: 4px solid var(--accent);
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.method-step h4 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+/* Conclusion */
+.conclusion {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    padding: 60px;
+    border-radius: 20px;
+    margin: 60px 0;
+    text-align: center;
+}
+
+.conclusion h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
+
+.conclusion p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--text);
+}
+
+/* Footer */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+/* Statistics Banner */
+.stats-banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--highlight);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tag System */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tag {
+    background: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
